@@ -1,5 +1,4 @@
-const cards = new Map()
-
+// SPADER
 cards.set('images/svg/2_of_spades.svg', 2)
 cards.set('images/svg/3_of_spades.svg', 3)
 cards.set('images/svg/4_of_spades.svg', 4)
@@ -13,7 +12,7 @@ cards.set('images/svg/jack_of_spades.svg', 10)
 cards.set('images/svg/queen_of_spades.svg', 10)
 cards.set('images/svg/king_of_spades.svg', 10)
 cards.set('images/svg/ace_of_spades.svg', 11)
-
+// RUTER
 cards.set('images/svg/2_of_diamonds.svg', 2)
 cards.set('images/svg/3_of_diamonds.svg', 3)
 cards.set('images/svg/4_of_diamonds.svg', 4)
@@ -27,7 +26,7 @@ cards.set('images/svg/jack_of_diamonds.svg', 10)
 cards.set('images/svg/queen_of_diamonds.svg', 10)
 cards.set('images/svg/king_of_diamonds.svg', 10)
 cards.set('images/svg/ace_of_diamonds.svg', 11)
-
+// KLÖVER
 cards.set('images/svg/2_of_clubs.svg', 2)
 cards.set('images/svg/3_of_clubs.svg', 3)
 cards.set('images/svg/4_of_clubs.svg', 4)
@@ -41,7 +40,7 @@ cards.set('images/svg/jack_of_clubs.svg', 10)
 cards.set('images/svg/queen_of_clubs.svg', 10)
 cards.set('images/svg/king_of_clubs.svg', 10)
 cards.set('images/svg/ace_of_clubs.svg', 11)
-
+// HJÄRTER
 cards.set('images/svg/2_of_hearts.svg', 2)
 cards.set('images/svg/3_of_hearts.svg', 3)
 cards.set('images/svg/4_of_hearts.svg', 4)
@@ -56,6 +55,7 @@ cards.set('images/svg/queen_of_hearts.svg', 10)
 cards.set('images/svg/king_of_hearts.svg', 10)
 cards.set('images/svg/ace_of_hearts.svg', 11)
 
+const cards = new Map()
 const cardsArray = Array.from(cards)
 
 const startBtn = document.querySelector('.start-game')
@@ -67,21 +67,12 @@ const dealerSum = document.querySelector('.dealer-value')
 const mySum = document.querySelector('.my-value')
 const popupH3 = document.querySelector('.popup-content h3')
 
-// const card2 = document.createElement('img')
-// let randomIndex2 = Math.floor(Math.random() * 52)
-// const randomCard2 = cardsArray[randomIndex2]
-// card2.src = randomCard2[0]
-// document.body.appendChild(card2)
-
-// const img = document.querySelector('#img-card')
-// img.setAttribute('src', randomCard[0] )
-
-
 let dealerValue = 0
 let myValue = 0
 let aceCount = 0
 let dealerAceCount = 0
 
+// Kollar om det finns ess som ska värderas som 1 istället för 11
 const checkAce = function() {
     while (myValue > 21) {   
         if (myValue > 21 && aceCount > 0) {
@@ -93,6 +84,7 @@ const checkAce = function() {
     }
 }
 
+// Kollar om det finns ess som ska värderas som 1 istället för 11
 const checkDealerAce = function() {
     while (dealerValue > 21 && dealerAceCount > 0) {
         dealerValue = dealerValue - 10
@@ -100,6 +92,7 @@ const checkDealerAce = function() {
     } 
 }
 
+// Första dragningen för dealer och spelare när spelet börjar
 const startDraw = function() {
     showElements()
     for (let card = 0; card < 2; card++) {
@@ -140,6 +133,7 @@ const startDraw = function() {
     }
 }
 
+// Drar nytt kort till spelare
 const draw = function() {
     const card = document.createElement('img')
     let randomIndex = Math.floor(Math.random() * 52)
@@ -156,6 +150,7 @@ const draw = function() {
     myValueUpdate()
 }
 
+// Drar nytt kort till dealer
 const dealerDraw = function() {
     while (dealerValue < 17) {
         const card = document.createElement('img')
@@ -174,6 +169,7 @@ const dealerDraw = function() {
     }
 }
 
+// Anropas när spelare stoppar, kollar om dealer ska dra mer kort och sen vem som vinner
 const winner = function(){
 
     dealerDraw()
@@ -200,6 +196,7 @@ const winner = function(){
 
 }
 
+// Nolställer och döljer de element som inte ska visas
 const reload = function() {
     startBtn.style.display = 'block';
     dealerValue = 0
@@ -210,7 +207,7 @@ const reload = function() {
     hideElements()
 }
 
-
+// Tömmer dealer/spelarens kort
 const emptyCardDiv = function() {
     while (dealerDiv.firstChild) {
         dealerDiv.removeChild(dealerDiv.firstChild)
@@ -220,6 +217,7 @@ const emptyCardDiv = function() {
     }
 }
 
+// Göm element som inte ska visas vid start
 const hideElements = function() {
     drawBtn.style.display = 'none'
     stopBtn.style.display = 'none'
@@ -238,6 +236,7 @@ const hideElements = function() {
     document.querySelector('hr').style.display = 'none'
 }
 
+// Visa element som ska synas under spelet
 const showElements = function() {
     drawBtn.style.display = 'inline'
     stopBtn.style.display = 'inline'
@@ -256,22 +255,28 @@ const showElements = function() {
     document.querySelector('hr').style.display = 'block'
 }
 
+// Uppdatera p-tag med dealerns värde
 const dealerValueUpdate = function(){
     dealerSum.textContent = dealerValue
 }
+
+// Uppdatera p-tag med spelarens värde
 const myValueUpdate = function(){
     mySum.textContent = myValue
 }
 
+// Visa pop-up ruta när spelet är slut
 function showPopup() {
     document.getElementById('popup').style.display = 'block';
-  }
+}
   
-  function closePopup() {
+// Stänger pop-up ruta och aktiverar startskärm
+function closePopup() {
     document.getElementById('popup').style.display = 'none';
     reload()
-  }
+}
 
+// Eventlisteners för knapparna
 startBtn.addEventListener('click', startDraw)
 drawBtn.addEventListener('click', draw)
 stopBtn.addEventListener('click', winner)
