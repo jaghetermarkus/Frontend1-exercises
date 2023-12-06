@@ -1,0 +1,37 @@
+.pressed {
+    font-size: 5rem;
+    color: gold;
+    background-color: silver;
+    transition: 2s;
+}
+
+.btn {
+    padding: 1rem 1.75rem;
+    background-color: cornflowerblue;
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    margin: 1rem;
+    transition: .8s;
+    transform: scale(1);
+    box-shadow: 2px 2px 5px #333;
+}
+
+.btn:hover {
+    box-shadow: 5px 5px 15px #333;
+    transition: .8s;
+    transform: scale(1.1);
+    background-color: rgb(84, 124, 197);
+}
+
+.box-1 {
+    width: 100px;
+    height: 100px;
+    background-color: orangered;
+}
+
+.box-2 {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}

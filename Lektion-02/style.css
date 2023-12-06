@@ -1,0 +1,193 @@
+* {
+    margin: 0px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0px;
+}
+
+body {
+    /* display: flex; */
+    /* justify-content: center; */
+    background-color: #F4F2EE;
+}
+
+nav {
+    background-color: white;
+    justify-content: center;
+    width: 100%;
+    padding: .5rem 0rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+nav,
+.width-medium, 
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.width-medium {
+    width: 80%;
+    margin:  auto;
+}
+
+nav div {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: .75rem;
+    color: #666666;
+    cursor: pointer;
+}
+li:hover {
+    color: black;
+}
+.User {
+    fill: #666666;
+}
+
+.menu-list {
+    margin-right: 1rem;
+}
+
+a {
+    padding: 0 1rem;
+    font-size: .75rem;
+    width: 7rem;
+}
+input {
+    height: 34px;
+    width: 200px;
+    background-color: #EDF3F7;
+    border: none;
+    margin-left: 0.25rem;
+    border-radius: 4px;
+    text-indent: 1rem;
+}
+
+/* textarea:hover, 
+input:focus {
+    border-color: green;
+} */
+
+input::placeholder {
+    text-indent: 1rem;
+}
+
+.between-content {
+    margin: 1rem;
+}
+
+section.main {
+    margin-top: 1rem;
+}
+
+main {
+    /* background-color: white; */
+    width: 40%;
+    align-items: center;
+    border-radius: .5rem;
+}
+
+.sidebar_left {
+    background-color: white;
+    width: 30%;
+    align-items: start;
+    justify-content: start;
+    border-radius: .5rem;
+}
+
+img.profile-picture-medium {
+    width: 3rem;
+    border-radius: 3rem;
+}
+
+.content img {
+    width: 1rem;
+    margin-right: .5rem;
+}
+
+.new-content {
+    display: flex;
+    align-items: center;
+    padding-bottom: .5rem;
+}
+
+.new-content input {
+    height: 3rem;
+    width: 100%;
+    border-radius: 3rem;
+}
+
+.sidebar_right {
+    background-color: white;
+    width: 30%;
+    align-items: end;
+    border-radius: .5rem;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+    padding: 1rem .5rem;
+    border: none;
+    margin: 0 .5rem;
+    background-color: transparent;
+}
+
+button:hover {
+    background-color: rgba(102, 102, 102, 20%);
+}
+
+.buttons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+.main-top,
+.main-content {
+    background-color: white;
+    border-radius: .5rem;
+    padding: 1rem;
+}
+
+#profile-info {
+    display: flex;
+    font-size: .8rem;
+    gap: .5rem;
+}
+
+.profile-name {
+    font-weight: 700;
+}
+
+.content-text {
+    font-size: .8rem;
+    margin: .5rem 0;
+}
+
+#content-picture {
+    width: 100%;
+}
+
+.reactions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-reaction {
+    width: .75rem;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+      <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+            content-visibility: auto;
+            }
+        }
+        </style>
+</head>
+<body class="bg-white m-0 p-0 box-border">
+
+    <header class="">
+        <nav class="bg-green-800/30 bg-[#C2C8C1] flex justify-between p-8 items-center">
+            <p class="uppercase row-span-1 leading-none"><b>G</b>arden <br> <b>H</b>eroes</p>
+            <ul class="flex gap-8 text-white/70  text-xl">
+                <li class="hover:text-white">Contact</li>
+                <li class="hover:text-white">About Us</li>
+                <li class="hover:text-white">Our Services</li>
+            </ul>
+        </nav>
+        <h1>Min rubrik</h1>
+
+    </header>
+
+
+
+</body>
+</html>
