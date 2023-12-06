@@ -75,14 +75,15 @@ let dealerAceCount = 0
 
 // Kollar om det finns ess som ska värderas som 1 istället för 11
 const checkAce = function() {
-    while (myValue > 21) {   
-        if (myValue > 21 && aceCount > 0) {
+
+        while (myValue > 21 && aceCount > 0) {
             myValue = myValue - 10
             aceCount = aceCount - 1
-        } else if (myValue > 21 && aceCount === 0) {
+        } 
+        
+        if (myValue > 21 && aceCount === 0) {
             winner()
         }
-    }
 }
 
 // Kollar om det finns ess som ska värderas som 1 istället för 11
@@ -172,8 +173,10 @@ const dealerDraw = function() {
 
 // Anropas när spelare stoppar, kollar om dealer ska dra mer kort och sen vem som vinner
 const winner = function(){
-
-    dealerDraw()
+    
+    if (myValue <= 21) {
+        dealerDraw()
+    }
 
     if (dealerValue <= 21) {
         if (dealerValue > myValue || myValue > 21) {
@@ -202,6 +205,8 @@ const reload = function() {
     startBtn.style.display = 'block';
     dealerValue = 0
     myValue = 0
+    aceCount = 0
+    dealerAceCount = 0
     myValueUpdate()
     dealerValueUpdate()
     emptyCardDiv()
