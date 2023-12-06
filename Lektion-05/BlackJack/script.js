@@ -1,3 +1,5 @@
+const cards = new Map()
+
 // SPADER
 cards.set('images/svg/2_of_spades.svg', 2)
 cards.set('images/svg/3_of_spades.svg', 3)
@@ -55,7 +57,6 @@ cards.set('images/svg/queen_of_hearts.svg', 10)
 cards.set('images/svg/king_of_hearts.svg', 10)
 cards.set('images/svg/ace_of_hearts.svg', 11)
 
-const cards = new Map()
 const cardsArray = Array.from(cards)
 
 const startBtn = document.querySelector('.start-game')
