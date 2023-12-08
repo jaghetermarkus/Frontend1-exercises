@@ -104,7 +104,17 @@ const startDraw = function() {
         card.src = randomCard[0]
         card.style.height = '7rem'
         card.style.margin = '.5rem'
+        card.style.opacity = '0';
+        card.style.transform = 'translateX(-100%)';
+        card.style.transition = 'opacity 0.5s ease-in, transform 0.5s ease-in';
+
         dealerDiv.appendChild(card)
+        
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'none';
+        }, 100); 
+
         dealerValue = dealerValue + randomCard[1]
         if (randomCard[1] === 11) {
             dealerAceCount++
@@ -119,7 +129,17 @@ const startDraw = function() {
         card.src = randomCard[0]
         card.style.height = '7rem'
         card.style.margin = '.5rem'
+        card.style.opacity = '0';
+        card.style.transform = 'translateX(-100%)';
+        card.style.transition = 'opacity 0.5s ease-in, transform 0.5s ease-in';
+        
         myDiv.appendChild(card)
+        
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'none';
+        }, 100); 
+
         if (randomCard[1] === 11) {
             aceCount++
         }
@@ -143,7 +163,17 @@ const draw = function() {
     card.src = randomCard[0]
     card.style.height = '7rem'
     card.style.margin = '.5rem'
+    card.style.opacity = '0';
+    card.style.transform = 'translateX(-100%)';
+    card.style.transition = 'opacity 0.5s ease-in, transform 0.5s ease-in';
+    
     myDiv.appendChild(card)
+    
+    setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'none';
+    }, 100); 
+
     myValue = myValue + randomCard[1]
     if (randomCard[1] === 11) {
         aceCount++
@@ -161,7 +191,17 @@ const dealerDraw = function() {
         card.src = randomCard[0]
         card.style.height = '7rem'
         card.style.margin = '.5rem'
+        card.style.opacity = '0';
+        card.style.transform = 'translateX(-100%)';
+        card.style.transition = 'opacity 0.5s ease-in, transform 0.5s ease-in';
+
         dealerDiv.appendChild(card)
+        
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'none';
+        }, 100); 
+        
         dealerValue = dealerValue + randomCard[1]
         if (randomCard[1] === 11) {
             dealerAceCount++
@@ -170,6 +210,10 @@ const dealerDraw = function() {
         dealerValueUpdate()
     }
 }
+
+// const addImgCSS = function(img) {
+
+// }
 
 // Anropas när spelare stoppar, kollar om dealer ska dra mer kort och sen vem som vinner
 const winner = function(){
