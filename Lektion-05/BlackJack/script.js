@@ -282,6 +282,12 @@ function closePopup() {
     reload()
 }
 
+
+// CASH COUNTER
+// let myCash = 100
+// let playCash;
+
+
 // Eventlisteners för knapparna
 startBtn.addEventListener('click', startDraw)
 drawBtn.addEventListener('click', draw)
